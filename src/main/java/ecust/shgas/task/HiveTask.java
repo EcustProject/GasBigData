@@ -17,46 +17,49 @@ public class HiveTask {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private List sqlCollection;
+    private List<String> sqls;
 
-    public void setSqlCollection(List sqlCollection) {
-        this.sqlCollection = sqlCollection;
+    public List<String> getSqls() {
+        return sqls;
+    }
+
+    public void setSqls(List<String> sqls) {
+        this.sqls = sqls;
     }
 
     public List execute(){
-        int taskNums = this.sqlCollection.size();
         List<Future<List>> futures = new ArrayList<Future<List>>();
-        for (int i=0;i < taskNums; i++){
-            String sql = this.sqlCollection.get(i).toString();
+        for(String sql : sqls) {
             Task task = new Task(sql);
-            futures.add(this.taskExecutor.submit(task));
+            Future f = taskExecutor.submit(task);
+            futures.add(f);
         }
+
         List results = new LinkedList();
         for (Future<List> future : futures) {
-            while (!future.isDone());// Future返回如果没有完成，则一直循环等待，直到Future返回完成
+            // Future返回如果没有完成，则一直循环等待，直到Future返回完成
+            while (!future.isDone())
             {
                 try {
-                    System.out.println("task运行结果" + future.get());
                     results.add(future.get());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
-        System.out.println(results);
         return results;
     }
 
     private class Task implements Callable{
         private  String sql;
+
         public Task(String sql){
             this.sql = sql;
         }
+
         public List call() throws Exception{
-            System.out.println("listCall");
-            List<Map<String, Object>> temp = jdbcTemplate.queryForList(this.sql);
-            System.out.println(temp);
-            return temp;
+            List<Map<String, Object>> result = jdbcTemplate.queryForList(this.sql);
+            return result;
         }
     }
 }

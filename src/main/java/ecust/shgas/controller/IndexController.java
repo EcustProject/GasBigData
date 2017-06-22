@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
-
     @RequestMapping(value = "/view/{formName}")
     public String loginForm(@PathVariable String formName){
         //动态跳转页面

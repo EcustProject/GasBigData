@@ -1,8 +1,7 @@
 package ecust.shgas.dao.hive;
 
-import ecust.shgas.task.ExecutorTask;
+import ecust.shgas.task.HiveTask;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -14,10 +13,10 @@ import java.util.List;
 @Repository
 public class HolidayDao {
     @Autowired
-    private ExecutorTask executorTask;
+    private HiveTask hiveTask;
 
     public List getHotxx(String condition) {
-        List res = new ArrayList();
+        List results = new ArrayList();
         List sqlColection = new ArrayList();
         String table_name = "hotxx_" + condition;
         String begin_time = condition + "-10-01";
@@ -26,8 +25,8 @@ public class HolidayDao {
         String sql2 = "SELECT hour(create_time) as hour,count(*) as huawu_count FROM " + table_name + " where create_time BETWEEN " + "'" + begin_time + "'" + " and " + "'" + end_time + "'" + " group by hour(create_time) ORDER BY hour asc";
         sqlColection.add(sql1);
         sqlColection.add(sql2);
-        executorTask.setSqlCollection(sqlColection);
-        res = executorTask.executeTask();
-        return res;
+        hiveTask.setSqlCollection(sqlColection);
+        results = hiveTask.execute();
+        return results;
     }
 }

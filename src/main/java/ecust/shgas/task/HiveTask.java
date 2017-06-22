@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.*;
 
 @Component
-public class ExecutorTask {
+public class HiveTask {
     @Autowired
     private ThreadPoolTaskExecutor taskExecutor;
     @Autowired
@@ -23,7 +23,7 @@ public class ExecutorTask {
         this.sqlCollection = sqlCollection;
     }
 
-    public List executeTask(){
+    public List execute(){
         int taskNums = this.sqlCollection.size();
         List<Future<List>> futures = new ArrayList<Future<List>>();
         for (int i=0;i < taskNums; i++){

@@ -12,11 +12,10 @@ import java.util.List;
  * Created by huchao on 2017/6/21.
  */
 @Repository
-
 public class HolidayDao {
-    // 执行普通的sql查询
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private ExecutorTask executorTask;
+
     public List getHotxx(String condition) {
         List res = new ArrayList();
         List sqlColection = new ArrayList();
@@ -27,7 +26,7 @@ public class HolidayDao {
         String sql2 = "SELECT hour(create_time) as hour,count(*) as huawu_count FROM " + table_name + " where create_time BETWEEN " + "'" + begin_time + "'" + " and " + "'" + end_time + "'" + " group by hour(create_time) ORDER BY hour asc";
         sqlColection.add(sql1);
         sqlColection.add(sql2);
-        ExecutorTask executorTask = new ExecutorTask(sqlColection,jdbcTemplate);
+        executorTask.setSqlCollection(sqlColection);
         res = executorTask.executeTask();
         return res;
     }

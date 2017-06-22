@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+    <!-- c3p0数据库连接池 -->
+    <bean id="mysqlDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="${dataSource.mysql.driver}" />
+        <property name="jdbcUrl" value="${dataSource.mysql.url}" />
+        <property name="user" value="${dataSource.mysql.username}" />
+        <property name="password" value="${dataSource.mysql.password}" />
+        <property name="maxPoolSize" value="40" />
+        <property name="minPoolSize" value="10" />
+        <property name="initialPoolSize" value="10" />
+        <property name="maxIdleTime" value="60" />
+        <!-- 关闭连接后不自动commit -->
+        <property name="autoCommitOnClose" value="false" />
+        <!-- 获取数据连接超时时间-->
+        <property name="checkoutTimeout" value="3000" />
+        <!-- 获取连接失败重试次数-->
+        <property name="acquireRetryAttempts" value="3" />
+    </bean>
+
+    <!-- Session工厂 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="dataSource" ref="mysqlDataSource" />
+        <property name="typeAliasesPackage" value="ecust.shgas.dao.mysql" />
+        <property name="mapperLocations" value="classpath*:mybatis/mapper/*.xml" />
+    </bean>
+
+    <!-- spring与mybatis整合配置，扫描所有mapper -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="ecust.shgas.dao.mysql" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+    <!-- 配置SqlSessionTemplate -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+</beans>

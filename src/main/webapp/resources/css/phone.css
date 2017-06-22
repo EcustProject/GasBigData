@@ -1,0 +1,49 @@
+.page{
+	width: 70%;
+}
+.head{
+	height: 60px;
+	padding: 10px;
+}
+.head .phone_text{
+	width: 88%;
+}
+#condition{
+	width: 100%;
+	line-height: 28px;
+	margin-left: 10px;
+}
+.header .phone_search{
+	width: 4%;
+	margin-left: 10px;
+}
+.search{
+  float: left;
+}
+.condition{
+	width: 8%;
+}
+.content{
+	height: 500px;
+	margin-top: 20px;
+	padding: 20px;
+}
+#phone_user{
+	position: relative;
+	top: -80px;
+	left: -145px;
+}
+#marker{
+	position: relative;
+	width: 150px;
+	height: 100px;
+	top:-230px;
+	left: 30px;
+}
+#marker span{
+	display: block;
+	font-size: 14px;
+	text-align: center;
+	padding: 4px;
+	color: #fff;
+}

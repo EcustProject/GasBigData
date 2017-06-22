@@ -30,5 +30,4 @@
     </bean>
     <import resource="classpath:spring-mysql-config.xml"/>
     <import resource="classpath:spring-hive-config.xml"/>
-
 </beans>

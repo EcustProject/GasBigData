@@ -1,5 +1,4 @@
 package ecust.shgas.dao.hive;
-
 import ecust.shgas.task.HiveTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

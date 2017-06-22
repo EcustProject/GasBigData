@@ -23,7 +23,6 @@ public class HiveTestDao {
     // 执行hive脚本
     @Autowired
     private HiveRunner hiveRunner;
-
     public List<Hot> getHots() {
         RowMapper<Hot> rowMapper=new BeanPropertyRowMapper<Hot>(Hot.class);
         List<Hot> hots = jdbcTemplate.query("select serial_number,create_time,fy_xingshi,fy_neirong from hotxx_2012 " +

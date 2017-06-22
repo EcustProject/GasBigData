@@ -22,7 +22,6 @@ public class HolidayController {
     public
     @ResponseBody
     List getHotxx(@RequestBody Map<String, String> condition) {
-        System.out.println(condition.get("year"));
         List results = holidayService.getPeriodHotxx(condition.get("year"));
         return results;
     }

@@ -1,5 +1,7 @@
 package ecust.shgas.controller;
 
+import ecust.shgas.service.UseThreadPoolDemoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.LinkedList;
@@ -12,6 +14,9 @@ import java.util.List;
 @Controller
 @RequestMapping("test")
 public class TestController {
+
+    @Autowired
+    private UseThreadPoolDemoService useThreadPoolDemoService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public @ResponseBody List<HelloModel> getAll(){
@@ -39,9 +44,24 @@ public class TestController {
         return model;
     }
 
+    @RequestMapping(value = "/thread", method = RequestMethod.GET)
+    public @ResponseBody HelloModel thread() {
+        useThreadPoolDemoService.threadTest();
+        return new HelloModel("thread1", "success");
+    }
+
     public static class HelloModel {
         private String id;
         private String message;
+
+        public HelloModel() {
+
+        }
+
+        public HelloModel(String id, String message) {
+            this.id = id;
+            this.message = message;
+        }
 
         public String getId() {
             return id;

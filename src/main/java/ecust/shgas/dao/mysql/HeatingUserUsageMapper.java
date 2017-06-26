@@ -18,12 +18,40 @@ public interface HeatingUserUsageMapper {
             " heating_year year, heating_month month, heating_type type,heating_usage 'usage' from heating_user_usage limit 0, 10")
     List<HeatingUserUsage> select();
 
-    // 某年用气量分布图数据
+    // 某区某年用气量分布图数据
+    @Select(" select user_usage 'usage' ,count(*) 'count' from ( " +
+            "    select  sum(heating_usage) user_usage from heating_user_usage " +
+            "    where heating_area = #{area} and heating_year = #{year}" +
+            "    group by heating_cid " +
+            " ) year_usage group by user_usage order by user_usage")
+    List<Map<String, Object>> area_distribute_user_year_usage(@Param("area") String area,
+                                                              @Param("year") String year);
+
+    // 上海市某年用气量分布图数据
     @Select(" select user_usage 'usage' ,count(*) 'count' from ( " +
             "    select  sum(heating_usage) user_usage from heating_user_usage " +
             "    where heating_year = #{year} GROUP BY heating_cid " +
             " ) year_usage group by user_usage order by user_usage")
-    List<Map<String, Object>> distribute_user_year_usage(@Param("year") String year);
+    List<Map<String, Object>> city_distribute_user_year_usage(@Param("year") String year);
+
+    // 某区某日期区间用气量分布图数据
+    @Select(" select user_usage 'usage',count(*) 'count' from (" +
+            "     select sum(heating_usage) user_usage from heating_user_usage " +
+            "     where heating_area = #{area} and heating_time >= #{startDate} and heating_time <= #{endDate}" +
+            "     group by heating_cid" +
+            " ) hot_usage group by user_usage order by user_usage;")
+    List<Map<String, Object>> area_distribute_user_date_range_usage(@Param("area") String area,
+                                                                    @Param("startDate") String startDate,
+                                                                    @Param("endDate") String endDate);
+
+    // 上海市某日期区间用气量分布图数据
+    @Select(" select user_usage 'usage',count(*) 'count' from (" +
+            "     select sum(heating_usage) user_usage from heating_user_usage " +
+            "     where heating_time >= #{startDate} and heating_time <= #{endDate}" +
+            "     group by heating_cid" +
+            " ) hot_usage group by user_usage order by user_usage;")
+    List<Map<String, Object>> city_distribute_user_date_range_usage(@Param("startDate") String startDate,
+                                                               @Param("endDate") String endDate);
 
     // 某年各区总用气量
     @Select(" select heating_area 'area', sum(heating_usage) 'usage' " +
@@ -60,7 +88,5 @@ public interface HeatingUserUsageMapper {
     @Select(" select heating_year 'year', sum(heating_usage) 'usage' from heating_user_usage" +
             " group by heating_year order by heating_year")
     List<Map<String, Object>> city_year_usage_change();
-
-    // 区域区间用气量
 
 }

@@ -26,8 +26,23 @@ public class TestHeatingUserUsageMapper{
     }
 
     @Test
-    public void distribute_year_usage() {
-        System.out.println(heatingUserUsageMapper.distribute_user_year_usage("2014"));
+    public void area_distribute_user_year_usage() {
+        System.out.println(heatingUserUsageMapper.area_distribute_user_year_usage("虹口区", "2014"));
+    }
+
+    @Test
+    public void city_distribute_user_year_usage() {
+        System.out.println(heatingUserUsageMapper.city_distribute_user_year_usage("2014"));
+    }
+
+    @Test
+    public void area_distribute_user_date_range_usage() {
+        System.out.println(heatingUserUsageMapper.area_distribute_user_date_range_usage("虹口区","2014-11-01", "2015-03-01"));
+    }
+
+    @Test
+    public void city_distribute_user_date_range_usage() {
+        System.out.println(heatingUserUsageMapper.city_distribute_user_date_range_usage("2014-11-01", "2015-03-01"));
     }
 
     @Test

@@ -97,4 +97,52 @@ public interface HeatingUserUsageMapper {
             " group by heating_year order by heating_year")
     List<Map<String, Object>> city_year_usage_change();
 
+    // 年用气量区间人数分布
+    @Select(" select heating_area 'area', count(*) 'count' from (" +
+            "    select sum(heating_usage) user_usage, heating_area from heating_user_usage " +
+            "    where heating_year=#{year} " +
+            "    group by heating_cid,heating_area " +
+            " ) hot_usage " +
+            " where user_usage >= #{lowUsage} and user_usage < #{highUsage}" +
+            " group by heating_area")
+    List<Map<String, Object>> area_year_usage_range_count(@Param("year") String year,
+                                               @Param("lowUsage")int lowUsage,
+                                               @Param("highUsage")int highUsage);
+
+    // 区间日期用气量区间人数分布
+    @Select(" select heating_area 'area', count(*) 'count' from (" +
+            "    select sum(heating_usage) user_usage, heating_area from heating_user_usage " +
+            "    where heating_time >= #{startDate} and heating_time <= #{endDate}" +
+            "    group by heating_cid,heating_area " +
+            " ) hot_usage " +
+            " where user_usage >= #{lowUsage} and user_usage < #{highUsage}" +
+            " group by heating_area")
+    List<Map<String, Object>> area_date_usage_range_count(@Param("startDate") String startDate,
+                                               @Param("endDate") String endDate,
+                                               @Param("lowUsage")int lowUsage,
+                                               @Param("highUsage")int highUsage);
+
+    // 上海市区间人数分布
+    @Select(" select count(*) 'count' from (" +
+            "    select sum(heating_usage) user_usage from heating_user_usage " +
+            "    where heating_year = #{year}" +
+            "    group by heating_cid " +
+            " ) hot_usage " +
+            " where user_usage >= #{lowUsage} and user_usage < #{highUsage}")
+    int city_year_usage_range_count(@Param("year") String year,
+                                    @Param("lowUsage")int lowUsage,
+                                    @Param("highUsage")int highUsage);
+
+    // 上海市区间人数分布
+    @Select(" select count(*) 'count' from (" +
+            "    select sum(heating_usage) user_usage from heating_user_usage " +
+            "    where heating_time >= #{startDate} and heating_time <= #{endDate}" +
+            "    group by heating_cid " +
+            " ) hot_usage " +
+            " where user_usage >= #{lowUsage} and user_usage < #{highUsage}")
+    int city_date_usage_range_count(@Param("startDate") String startDate,
+                                                          @Param("endDate") String endDate,
+                                                          @Param("lowUsage")int lowUsage,
+                                                          @Param("highUsage")int highUsage);
+
 }

@@ -7,100 +7,100 @@ import java.util.Date;
  * Created by wenqing on 2017/6/22.
  */
 public class HeatingUserUsage implements Serializable {
-    private String heating_cid;
-    private String heating_name;
-    private String heating_address;
-    private String  heating_area;
-    private Date heating_time;
-    private String heating_year;
-    private String heating_month;
-    private int  heating_type;
-    private int  heating_usage;
+    private String cid;
+    private String name;
+    private String address;
+    private String area;
+    private Date time;
+    private String year;
+    private String month;
+    private int type;
+    private int usage;
 
-    public String getHeating_cid() {
-        return heating_cid;
+    public String getCid() {
+        return cid;
     }
 
-    public void setHeating_cid(String heating_cid) {
-        this.heating_cid = heating_cid;
+    public void setCid(String cid) {
+        this.cid = cid;
     }
 
-    public String getHeating_name() {
-        return heating_name;
+    public String getName() {
+        return name;
     }
 
-    public void setHeating_name(String heating_name) {
-        this.heating_name = heating_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getHeating_address() {
-        return heating_address;
+    public String getAddress() {
+        return address;
     }
 
-    public void setHeating_address(String heating_address) {
-        this.heating_address = heating_address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getHeating_area() {
-        return heating_area;
+    public String getArea() {
+        return area;
     }
 
-    public void setHeating_area(String heating_area) {
-        this.heating_area = heating_area;
+    public void setArea(String area) {
+        this.area = area;
     }
 
-    public Date getHeating_time() {
-        return heating_time;
+    public Date getTime() {
+        return time;
     }
 
-    public void setHeating_time(Date heating_time) {
-        this.heating_time = heating_time;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
-    public String getHeating_year() {
-        return heating_year;
+    public String getYear() {
+        return year;
     }
 
-    public void setHeating_year(String heating_year) {
-        this.heating_year = heating_year;
+    public void setYear(String year) {
+        this.year = year;
     }
 
-    public String getHeating_month() {
-        return heating_month;
+    public String getMonth() {
+        return month;
     }
 
-    public void setHeating_month(String heating_month) {
-        this.heating_month = heating_month;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
-    public int getHeating_type() {
-        return heating_type;
+    public int getType() {
+        return type;
     }
 
-    public void setHeating_type(int heating_type) {
-        this.heating_type = heating_type;
+    public void setType(int type) {
+        this.type = type;
     }
 
-    public int getHeating_usage() {
-        return heating_usage;
+    public int getUsage() {
+        return usage;
     }
 
-    public void setHeating_usage(int heating_usage) {
-        this.heating_usage = heating_usage;
+    public void setUsage(int usage) {
+        this.usage = usage;
     }
 
     @Override
     public String toString() {
         return "HeatingUserUsage{" +
-                "heating_cid='" + heating_cid + '\'' +
-                ", heating_name='" + heating_name + '\'' +
-                ", heating_address='" + heating_address + '\'' +
-                ", heating_area='" + heating_area + '\'' +
-                ", heating_time=" + heating_time +
-                ", heating_year='" + heating_year + '\'' +
-                ", heating_month='" + heating_month + '\'' +
-                ", heating_type=" + heating_type +
-                ", heating_usage=" + heating_usage +
+                "cid='" + cid + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", area='" + area + '\'' +
+                ", time=" + time +
+                ", year='" + year + '\'' +
+                ", month='" + month + '\'' +
+                ", type=" + type +
+                ", usage=" + usage +
                 '}';
     }
 }

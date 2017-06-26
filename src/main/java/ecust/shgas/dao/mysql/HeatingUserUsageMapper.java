@@ -59,6 +59,14 @@ public interface HeatingUserUsageMapper {
             " group by heating_area order by 'usage'")
     List<Map<String, Object>> area_year_usage(@Param("year") String year);
 
+    // 某日期区间各区用气量
+    @Select(" select heating_area 'area', sum(heating_usage) 'usage' " +
+            "from heating_user_usage " +
+            " where heating_time >= #{startDate} and heating_time <= #{endDate}" +
+            " group by heating_area")
+    List<Map<String, Object>> area_date_range_usage(@Param("startDate") String startDate,
+                                                    @Param("endDate") String endDate);
+
     // 某年各区总人数
     @Select(" select heating_area 'area', COUNT(distinct(heating_cid)) 'count' " +
             " from heating_user_usage where heating_year = #{year} " +

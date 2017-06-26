@@ -74,4 +74,5 @@ public class TestHeatingUserUsageMapper{
     public void city_year_usage_change() {
         System.out.println(heatingUserUsageMapper.city_year_usage_change());
     }
+
 }

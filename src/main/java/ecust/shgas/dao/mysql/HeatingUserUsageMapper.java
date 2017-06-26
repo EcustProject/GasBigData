@@ -3,6 +3,7 @@ package ecust.shgas.dao.mysql;
 import ecust.shgas.domain.HeatingUserUsage;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -144,5 +145,19 @@ public interface HeatingUserUsageMapper {
                                                           @Param("endDate") String endDate,
                                                           @Param("lowUsage")int lowUsage,
                                                           @Param("highUsage")int highUsage);
+
+    /**
+     * 修复部分没有区域的数据
+     */
+    @Select("SELECT distinct(left(heating_address,3)) FROM heating_user_usage WHERE heating_area = ''")
+    List<String> select_need_repair_data();
+
+    @Select("SELECT distinct(heating_area) from heating_user_usage " +
+            "where heating_area != '' and heating_address like #{address}")
+    List<String> select_area_by_address(@Param("address") String address);
+
+    @Update("update heating_user_usage set heating_area = #{area} " +
+            "where heating_area='' and left(heating_address,3) = #{address}")
+    int update_need_repair_data(@Param("area")String area, @Param("address") String address);
 
 }

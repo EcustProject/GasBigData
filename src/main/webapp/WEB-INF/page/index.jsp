@@ -102,10 +102,10 @@
 <!-- navbar -->
 <a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=394d79f665d50334b7abf3ce795d0216"></script>
-<script type="text/javascript" src="/resources/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" src="/resources/js/plugin/jquery-2.1.0.js" ></script>
 <script type="text/javascript" src="//webapi.amap.com/ui/1.0/main.js"></script>
-<script type="text/javascript" src="/resources/js/amazeui.min.js"></script>
-<script type="text/javascript" src="/resources/js/blockUI.js" ></script>
+<script type="text/javascript" src="/resources/js/plugin/amazeui.min.js"></script>
+<script type="text/javascript" src="/resources/js/plugin/blockUI.js" ></script>
 <script type="text/javascript" src="/resources/js/charts/echarts.min.js" ></script>
 <script type="text/javascript" src="/resources/js/charts/indexChart.js" ></script>
 <script type="text/javascript" src="/resources/js/home/home.js" ></script>

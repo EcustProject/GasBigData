@@ -17,19 +17,31 @@ public class HolidayDao {
     @Autowired
     private SqlTool sqlTool;
 
-    public List getHotxx(String condition) {
+    public List getHotxx(Map<String, String> condition) {
         Map<String,List> maps = new LinkedHashMap<String, List>();
-        List limits = new ArrayList();
-        String table_name = "hotxx_" + condition;
-        String begin_time = condition + "-10-01";
-        String end_time = condition + "-10-07";
-        String sql1 = "SELECT day(create_time) as day,count(*) as huawu_count FROM ? where create_time BETWEEN ?  and ? group by day(create_time) ORDER BY day asc";
-        String sql2 = "SELECT hour(create_time) as hour,count(*) as huawu_count FROM ? where create_time BETWEEN ?  and ? group by hour(create_time) ORDER BY hour asc";
-        limits.add(table_name);
-        limits.add(begin_time);
-        limits.add(end_time);
-        maps.put(sql1, limits);
-        maps.put(sql2, limits);
+        List limits1 = new ArrayList();
+        List limits2 = new ArrayList();
+        String table_name = "hotxx" +"_orc";
+        String begin_time = condition.get("year") + "-10-01";
+        String end_time = condition.get("year") + "-10-07";
+        String newYear_begin = condition.get("begin");
+        String newYear_end = condition.get("end");
+        String sql1 = "SELECT day(create_time) as day,count(*) as huawu_count FROM ? where to_date(create_time) BETWEEN ?  and ? group by day(create_time) ORDER BY day asc";
+        String sql2 = "SELECT hour(create_time) as hour,count(*) as huawu_count FROM ? where to_date(create_time) BETWEEN ?  and ? group by hour(create_time) ORDER BY hour asc";
+        String sql3 = "SELECT day(create_time) as day1,count(*) as huawu_count FROM ? where to_date(create_time) BETWEEN ?  and ? group by day(create_time) ORDER BY day1 asc";
+        String sql4 = "SELECT hour(create_time) as hour1,count(*) as huawu_count FROM ? where to_date(create_time) BETWEEN ?  and ? group by hour(create_time) ORDER BY hour1 asc";
+        limits1.add(table_name);
+        limits1.add(begin_time);
+        limits1.add(end_time);
+
+        limits2.add(table_name);
+        limits2.add(newYear_begin);
+        limits2.add(newYear_end);
+
+        maps.put(sql1, limits1);
+        maps.put(sql2, limits1);
+        maps.put(sql3, limits2);
+        maps.put(sql4, limits2);
         sqlTool.setMap(maps);
         List<String> res= sqlTool.sqlset();
         hiveTask.setSqls(res);

@@ -4,10 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.*;
 
 @Component
@@ -34,7 +31,6 @@ public class HiveTask {
             Future f = taskExecutor.submit(task);
             futures.add(f);
         }
-
         List results = new LinkedList();
         for (Future<List> future : futures) {
             // Future返回如果没有完成，则一直循环等待，直到Future返回完成
@@ -42,6 +38,7 @@ public class HiveTask {
             {
                 try {
                     results.add(future.get());
+                    System.out.println(future.get());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

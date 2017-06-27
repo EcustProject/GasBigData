@@ -1,6 +1,7 @@
 package ecust.shgas.service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by huchao on 2017/6/21.
@@ -9,6 +10,6 @@ import java.util.List;
     /*
            获取节假日单天时间段话务统计
      */
-   List  getPeriodHotxx(String condition);
+   List  getPeriodHotxx(Map<String, String> conditio);
 }
 

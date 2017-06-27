@@ -23,7 +23,7 @@ public class SqlTool {
         String table_prefix = "hotxx_";//表前缀
         List<String> sqlCollection = new LinkedList<String>();
         for (String key : this.map.keySet()) {
-            StringBuilder sqlConnect = new StringBuilder();
+            StringBuffer sqlConnect = new StringBuffer();
             List limits = this.map.get(key);
             String[] sqls = key.split(split_char);
             //查询条件数
@@ -41,10 +41,12 @@ public class SqlTool {
                 }else{
                     sqlConnect.append(sqls[i]+limits.get(i));
                 }
+
             }
             if (sql_len == con_len + 1) {
                 sqlConnect.append(sqls[con_len]);
             }
+            System.out.println(sqlConnect);
             sqlCollection.add(sqlConnect.toString());
         }
         return sqlCollection;

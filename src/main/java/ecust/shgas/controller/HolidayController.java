@@ -22,7 +22,7 @@ public class HolidayController {
     public
     @ResponseBody
     List getHotxx(@RequestBody Map<String, String> condition) {
-        List results = holidayService.getPeriodHotxx(condition.get("year"));
+        List results = holidayService.getPeriodHotxx(condition);
         return results;
     }
 }

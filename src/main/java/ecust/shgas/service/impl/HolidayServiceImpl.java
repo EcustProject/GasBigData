@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by huchao on 2017/6/21.
@@ -14,7 +15,7 @@ import java.util.List;
 public class HolidayServiceImpl implements HolidayService {
     @Autowired
     private HolidayDao holidayDao;
-    public List getPeriodHotxx(String condition) {
+    public List getPeriodHotxx(Map<String, String> condition) {
         List hotxx = holidayDao.getHotxx(condition);
         return hotxx;
     }

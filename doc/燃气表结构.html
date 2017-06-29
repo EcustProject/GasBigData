@@ -1,0 +1,1602 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><style>/*github*/
+.codehilite {background-color:#fff;color:#333333;}
+.codehilite .hll {background-color:#ffffcc;}
+.codehilite .c{color:#999988;font-style:italic}
+.codehilite .err{color:#a61717;background-color:#e3d2d2}
+.codehilite .k{font-weight:bold}
+.codehilite .o{font-weight:bold}
+.codehilite .cm{color:#999988;font-style:italic}
+.codehilite .cp{color:#999999;font-weight:bold}
+.codehilite .c1{color:#999988;font-style:italic}
+.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
+.codehilite .gd{color:#000000;background-color:#ffdddd}
+.codehilite .ge{font-style:italic}
+.codehilite .gr{color:#aa0000}
+.codehilite .gh{color:#999999}
+.codehilite .gi{color:#000000;background-color:#ddffdd}
+.codehilite .go{color:#888888}
+.codehilite .gp{color:#555555}
+.codehilite .gs{font-weight:bold}
+.codehilite .gu{color:#800080;font-weight:bold}
+.codehilite .gt{color:#aa0000}
+.codehilite .kc{font-weight:bold}
+.codehilite .kd{font-weight:bold}
+.codehilite .kn{font-weight:bold}
+.codehilite .kp{font-weight:bold}
+.codehilite .kr{font-weight:bold}
+.codehilite .kt{color:#445588;font-weight:bold}
+.codehilite .m{color:#009999}
+.codehilite .s{color:#dd1144}
+.codehilite .n{color:#333333}
+.codehilite .na{color:teal}
+.codehilite .nb{color:#0086b3}
+.codehilite .nc{color:#445588;font-weight:bold}
+.codehilite .no{color:teal}
+.codehilite .ni{color:purple}
+.codehilite .ne{color:#990000;font-weight:bold}
+.codehilite .nf{color:#990000;font-weight:bold}
+.codehilite .nn{color:#555555}
+.codehilite .nt{color:navy}
+.codehilite .nv{color:teal}
+.codehilite .ow{font-weight:bold}
+.codehilite .w{color:#bbbbbb}
+.codehilite .mf{color:#009999}
+.codehilite .mh{color:#009999}
+.codehilite .mi{color:#009999}
+.codehilite .mo{color:#009999}
+.codehilite .sb{color:#dd1144}
+.codehilite .sc{color:#dd1144}
+.codehilite .sd{color:#dd1144}
+.codehilite .s2{color:#dd1144}
+.codehilite .se{color:#dd1144}
+.codehilite .sh{color:#dd1144}
+.codehilite .si{color:#dd1144}
+.codehilite .sx{color:#dd1144}
+.codehilite .sr{color:#009926}
+.codehilite .s1{color:#dd1144}
+.codehilite .ss{color:#990073}
+.codehilite .bp{color:#999999}
+.codehilite .vc{color:teal}
+.codehilite .vg{color:teal}
+.codehilite .vi{color:teal}
+.codehilite .il{color:#009999}
+.codehilite .gc{color:#999;background-color:#EAF2F5}
+</style><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: false
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false
+});
+</script>
+<title>燃气表结构</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>燃气客服系统数据</h1>
+<div class="toc">
+<ul>
+<li><a href="#_1">燃气客服系统数据</a><ul>
+<li><a href="#_2">说明</a></li>
+<li><a href="#0">0.枚举值</a></li>
+<li><a href="#1">1.用户基本信息</a></li>
+<li><a href="#2">2.账单信息</a></li>
+<li><a href="#3">3.用气信息即抄表信息</a></li>
+<li><a href="#4">4.非正常计量信息</a></li>
+<li><a href="#5">5.催缴信息</a></li>
+<li><a href="#6">6.整改信息</a></li>
+<li><a href="#7">7.用户安检信息</a></li>
+<li><a href="#8">8.违章情况</a></li>
+<li><a href="#9">9.安全指标</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>说明</h2>
+<blockquote>
+<p>燃气客服系统的表结构涉及，一般I开头表示整型，S开头表示字符串类型，D开头表示date日期类型</p>
+</blockquote>
+<h2 id="0"><a name="user-content-0" href="#0" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>0.枚举值</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+swords</p>
+<blockquote>
+<p>该表主要存储各种枚举值，比如区域，用气性质，缴费方式，信用等级等</p>
+</blockquote>
+</li>
+<li>
+<p><strong>主要涉及信息</strong><br />
+<div class="codehilite"><pre>belongid   枚举类型
+wordsid         id
+wordsvalue   外键值
+wordsvalue   外键值类型（int,string等）
+wordscontent 真实值
+wordsremark    说明
+sortid      用于排序
+isactive    是否可用
+</pre></div>
+</p>
+</li>
+<li>
+<p><strong>举例</strong><br />
+区域的belongid为1103,获取用户的区域信息<br />
+<div class="codehilite"><pre>select c.wordscontent from kg_yonghuxx a
+left join s_words b
+on to_char(b.i_quyubh)=c.wordsvalue
+and c.belongid=1103;
+
+wordscontent: 静安北 黄浦区 徐汇区 长宁区 ...
+wordsvalue:1 2 3 4 ...
+</pre></div>
+</p>
+</li>
+</ul>
+<h2 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.用户基本信息</h2>
+<ul>
+<li><strong>关联表</strong><br />
+kg_yonghuxx<blockquote>
+<p>用户信息</p>
+</blockquote>
+</li>
+<li><strong>主要涉及信息</strong></li>
+</ul>
+<div class="codehilite"><pre><span class="n">I_JLZT</span><span class="o">:</span> <span class="err">记录状态（</span><span class="o">-</span><span class="mi">1</span><span class="err">作废，</span><span class="mi">0</span><span class="err">正常）抓取数据时一定要添加条件</span><span class="n">I_JLZT</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">S_CID</span><span class="o">:</span> <span class="err">用户编号</span>
+<span class="n">S_HM</span><span class="o">:</span><span class="err">用户名称</span>
+<span class="n">S_DZ</span><span class="o">:</span><span class="err">用户地址</span>
+<span class="n">I_YONGQIXZ</span><span class="o">:</span><span class="err">用气性质</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1102</span><span class="o">)(</span><span class="err">工业</span><span class="o">,</span><span class="err">营业</span><span class="o">,</span><span class="err">事业</span><span class="o">,</span><span class="err">团体</span><span class="o">,</span><span class="err">自用</span><span class="o">,</span><span class="err">个营</span><span class="o">,</span><span class="err">个团</span><span class="o">,</span><span class="err">家庭</span><span class="o">,</span><span class="err">郊区</span><span class="o">)</span>
+<span class="n">I_YONGQIYT</span><span class="o">:</span><span class="err">用气用途</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1110</span><span class="o">)</span><span class="err">一般</span> <span class="err">食堂</span> <span class="err">餐饮</span> <span class="err">锅炉</span> <span class="err">工业生产</span> <span class="err">热电联供</span> <span class="err">空调</span> <span class="err">加气站</span> <span class="err">实验室</span> <span class="err">商办</span>
+<span class="n">I_HANGYE</span><span class="o">:</span><span class="err">行业</span>
+<span class="o">(</span>
+<span class="mi">1</span><span class="err">机械制造</span> <span class="mi">2</span><span class="err">金属冶炼</span> <span class="mi">3</span><span class="err">日用品及包装制造</span> <span class="mi">4</span><span class="err">化工及材料</span>  <span class="mi">5</span><span class="err">纺织</span> <span class="mi">6</span><span class="err">电子工业</span> <span class="mi">7</span><span class="err">食品加工</span>  <span class="mi">8</span><span class="err">医药</span>  <span class="mi">9</span><span class="err">汽车</span> <span class="mi">10</span><span class="err">宾馆</span> <span class="mi">11</span><span class="err">餐饮</span> <span class="mi">12</span><span class="err">娱乐</span>
+<span class="mi">13</span><span class="err">商场卖场</span> <span class="mi">1</span><span class="err">商办楼</span> <span class="mi">15</span><span class="err">大学</span> <span class="mi">16</span><span class="err">中小学</span> <span class="mi">17</span><span class="err">银行</span> <span class="mi">18</span><span class="err">政府机关</span><span class="mi">19</span><span class="err">医院</span> <span class="mi">20</span><span class="err">部队</span> <span class="mi">21</span><span class="err">公共事业及福利单位</span> <span class="mi">22</span><span class="err">浴室</span> <span class="mi">23</span><span class="err">科研</span> <span class="mi">24</span><span class="err">单位宿舍</span>
+<span class="o">)</span>
+<span class="n">I_QIYUAN</span><span class="o">:</span><span class="err">气源</span><span class="o">(</span><span class="err">燃气种类</span><span class="o">)(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1101</span><span class="o">)</span><span class="err">人工煤气</span> <span class="err">天然气</span>
+<span class="n">I_CHAOBIAOFS</span><span class="o">:</span><span class="err">抄表方式智能功能</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1707</span><span class="o">)</span> <span class="err">普通</span> <span class="err">有线</span> <span class="err">非标无线</span> <span class="err">标准无线</span> <span class="err">普通</span><span class="n">IC卡</span> <span class="n">GPRS</span> <span class="o">...</span>
+<span class="n">I_JIAOFEIFS</span><span class="o">:</span><span class="err">缴费方式</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1104</span><span class="o">)</span> <span class="err">现金</span> <span class="err">托收</span> <span class="err">代扣</span>
+<span class="n">I_QUYUB</span><span class="o">:</span><span class="err">区域编号</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1103</span><span class="o">)</span> <span class="err">静安北</span> <span class="err">黄浦区</span> <span class="err">徐汇区</span> <span class="err">长宁区</span> <span class="o">...</span>
+<span class="n">I_DAOLUBH</span><span class="o">:</span><span class="err">道路编号</span>
+<span class="n">I_ZHENGJIANLX</span><span class="o">:</span><span class="err">证件类型</span> <span class="mi">1</span><span class="o">=</span><span class="err">身份证</span> <span class="mi">2</span><span class="o">=</span><span class="err">护照</span> <span class="mi">3</span><span class="o">=</span><span class="err">工商登记号</span> <span class="mi">4</span><span class="o">=</span><span class="err">组织机构代码</span> <span class="mi">5</span><span class="o">=</span><span class="err">军官证</span>
+<span class="n">S_ZHENGJIANHM</span><span class="o">:</span><span class="err">证件号码</span>
+<span class="n">S_LIANXIDH</span><span class="o">:</span><span class="err">联系电话</span>
+<span class="n">S_LIANXISJ</span><span class="o">:</span><span class="err">联系手机，</span><span class="n">S_LIANXIDH</span><span class="o">+</span><span class="n">S_LIANXISJ可大致补全手机号</span>
+<span class="n">S_ZHANGDANDZ</span><span class="o">:</span><span class="err">账单地址</span>
+
+<span class="n">I_ZHONGYAOYH</span><span class="o">:</span><span class="err">标记是否是重要用户</span>
+<span class="n">I_YHLX</span><span class="o">:</span><span class="err">用户类别</span><span class="o">(</span><span class="mi">1</span><span class="o">:</span><span class="err">领导</span><span class="o">)</span> <span class="err">目前没有</span>
+<span class="n">I_DINUAN</span><span class="o">:</span><span class="err">标记是否是地暖用户（</span><span class="mi">0</span><span class="err">否</span> <span class="mi">1</span><span class="err">是）</span>
+<span class="n">I_ICKYH</span><span class="o">:</span><span class="err">是否</span><span class="n">IC卡用户</span><span class="err">（</span><span class="mi">0</span><span class="o">:</span><span class="err">否</span> <span class="mi">1</span><span class="o">:</span><span class="err">是）</span> <span class="err">默认</span><span class="mi">0</span>
+<span class="n">S_XINYONDJ</span><span class="o">:</span><span class="err">信用等级</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1614</span><span class="o">)</span> <span class="n">A</span> <span class="n">B</span> <span class="n">C</span> <span class="n">D</span>
+
+<span class="n">S_LAOYONGHBH</span><span class="o">:</span><span class="err">老用户编号</span>
+<span class="n">D_ZHUCERQ</span><span class="o">:</span><span class="err">注册日期</span><span class="o">(</span><span class="err">初次装表日期</span><span class="o">)</span>
+<span class="n">D_XIAOHURQ</span><span class="o">:</span><span class="err">销户日期</span>
+<span class="n">D_HUANBIAORQ</span><span class="o">:</span><span class="err">换表日期</span>
+<span class="n">D_HUANBIAOQRRQ</span><span class="o">:</span><span class="err">换表确认日期</span>
+<span class="n">I_XINBIAODM</span><span class="o">:</span><span class="err">新表底码</span>
+<span class="n">I_JIUBIAOCM</span><span class="o">:</span><span class="err">旧表抄码</span>
+<span class="n">N_BIAONENGL</span><span class="o">:</span><span class="err">表能量</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1709</span><span class="o">)</span>
+<span class="n">I_SHUXINGBH</span><span class="o">:</span><span class="err">表属性编号</span>
+<span class="n">I_BIAOZHUANGT</span><span class="o">:</span><span class="err">表状态</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1111</span><span class="o">)</span><span class="err">正常</span> <span class="err">非正常卡</span> <span class="err">暂拆</span> <span class="err">拆除</span> <span class="err">销户</span> <span class="err">转办换新卡</span> <span class="err">租赁用户</span> <span class="err">停气</span>
+
+<span class="n">I_FANGQIEQZZ</span><span class="o">:</span><span class="err">防窃气装置</span><span class="o">(</span><span class="mi">0</span> <span class="err">无</span> <span class="mi">1</span> <span class="err">一型</span> <span class="mi">2</span> <span class="err">二型</span><span class="o">)</span>
+<span class="n">I_DIANZIZD</span><span class="o">:</span><span class="err">电子账单用户</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">1116</span><span class="o">)</span> <span class="err">纸质账单</span> <span class="err">纸质电子账单并存</span> <span class="err">微账单</span> <span class="err">易账单</span><span class="o">(</span><span class="err">取消纸质账单</span><span class="o">)</span>
+<span class="n">I_FANGWULX</span><span class="o">:</span><span class="err">房屋类型（用户</span><span class="mi">1202</span><span class="err">）</span>
+<span class="n">I_RENKOUSHU</span><span class="o">:</span><span class="err">人口数量</span>
+<span class="n">I_DIYIJTJS</span><span class="o">:</span> <span class="err">第一阶梯基数</span> <span class="err">默认</span><span class="mi">310</span>
+<span class="n">I_DIERJTJS</span><span class="o">:</span> <span class="err">第二阶梯基数</span> <span class="err">默认</span><span class="mi">520</span>
+<span class="n">I_DUORENKJS</span><span class="o">:</span> <span class="err">多人口基数</span>
+<span class="n">I_BAOXIANF</span><span class="o">:</span><span class="err">保险费</span>
+<span class="n">I_SHUJUCJFS</span><span class="o">:</span><span class="err">数据采集方式</span><span class="o">(</span><span class="err">用户词语</span><span class="mi">1527</span><span class="o">)</span>
+</pre></div>
+
+
+<h2 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.账单信息</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+zw_zhangdan<br />
+xz_zhangdan</p>
+<blockquote>
+<p>用户账单，包括销账账单和账务账单</p>
+</blockquote>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>zw_zhangdan, xz_zhangdan</p>
+</blockquote>
+<div class="codehilite"><pre><span class="n">I_ZT</span><span class="o">:</span> <span class="err">收费状态</span><span class="o">(</span><span class="err">系统词语</span><span class="mi">2001</span><span class="o">,</span><span class="mi">1</span><span class="err">开账</span><span class="o">,</span><span class="mi">2</span><span class="err">欠费</span><span class="o">(</span><span class="err">核计</span><span class="o">),</span><span class="mi">3</span><span class="err">暂缓支付</span><span class="o">,</span><span class="mi">4</span><span class="err">收费</span><span class="o">,</span><span class="mi">5</span><span class="err">结账</span><span class="o">(</span><span class="err">销账</span><span class="o">),-</span><span class="mi">2</span><span class="err">分期付款</span><span class="o">,-</span><span class="mi">3</span><span class="err">退票</span><span class="o">,-</span><span class="mi">4</span><span class="err">全额注销</span><span class="o">,-</span><span class="mi">1</span><span class="err">作废</span><span class="o">)</span>
+<span class="n">S_ZHANGHUBH</span><span class="o">:</span> <span class="err">账户编号即用户编号</span>
+<span class="n">S_HM</span><span class="o">:</span> <span class="err">用户名称</span>
+<span class="n">S_DZ</span><span class="o">:</span><span class="err">用户地址</span>
+<span class="n">I_ZHANGDANNY</span><span class="o">:</span> <span class="err">账单年月</span>
+<span class="n">I_ZHANGDANLX</span><span class="o">:</span> <span class="err">账单类型</span><span class="o">(</span><span class="n">belongid</span><span class="o">=</span><span class="mi">2114</span><span class="o">,</span><span class="mi">0</span> <span class="err">营业账，</span><span class="mi">1</span> <span class="err">呆账，</span><span class="mi">2</span> <span class="err">集团公司</span><span class="o">,</span><span class="mi">3</span><span class="err">保险费</span>
+<span class="n">I_QIANKUANZT</span><span class="o">:</span> <span class="err">欠款状态（</span><span class="n">belongid</span><span class="o">=</span><span class="mi">2002</span><span class="err">，</span><span class="mi">0</span><span class="err">未作欠款处理，</span><span class="mi">1</span><span class="err">催款，</span><span class="mi">2</span><span class="err">诉讼）</span>
+<span class="n">N_FEIZCJLBSF</span><span class="o">:</span> <span class="err">非正常计量补收费</span>
+<span class="n">N_ZHINAJ</span><span class="o">:</span> <span class="err">滞纳金：总滞纳金</span>
+<span class="n">N_ZHANGDANYSZNJ</span><span class="o">:</span> <span class="err">账单应收滞纳金：实际应收滞纳金</span>
+<span class="n">N_JE</span><span class="o">:</span> <span class="err">账单总金额：本金</span><span class="o">+</span><span class="err">账单应收滞纳金</span>
+<span class="n">N_WANGYUEZNJ</span><span class="o">:</span> <span class="err">往月滞纳金</span>
+<span class="n">N_WANGYUEKZRLF</span><span class="o">:</span> <span class="err">往月空置容量费</span>
+</pre></div>
+
+
+<ul>
+<li><strong>举例</strong><blockquote>
+<p>I_ZT 4收费,5结账  缴费金额<br />
+  I_ZT 2欠费(核计),3暂缓支付 欠费金额<br />
+  i_zhangdanlx&lt;&gt;3 账单不是保险费</p>
+</blockquote>
+</li>
+</ul>
+<p>年累计消费金额, 年累计缴费金额，年累计缴费次数,年累计欠费金额，年累计欠费次数<br />
+<div class="codehilite"><pre>select
+   zd.s_zhanghubh s_cid/*账户编号*/,
+   substr(zd.i_zhangdanny,1,4) nian/*账务年份*/,
+   sum(zd.n_je) nljxfje/*年累计消费金额*/,
+   sum(case when zd.i_zt in (4,5) then zd.n_je else 0 end) xiaozhangje/*年累计缴费金额*/,
+   sum(case when zd.i_zt in (2,3) then zd.n_je else 0 end) weixiaoje/*年累计欠费金额*/,
+   sum(case when zd.i_zt in (2,3) then 1 else 0 end) qianfeics/*年累计欠费次数*/,
+   sum(case when zd.i_zt in (4,5) then zd.n_je else 0 end) / count(0) jiaofeil/*年按时缴费率*/
+from
+(
+   select * from zw_zhangdan  a union all select * from xz_zhangdan b
+) zd
+where zd.i_zhangdanlx&lt;&gt;3 and zd.i_zt&gt;0
+group by zd.s_zhanghubh,substr(zd.i_zhangdanny,1,4);
+</pre></div>
+</p>
+<h2 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.用气信息即抄表信息</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+cb_chaobiaosj</p>
+<blockquote>
+<p>抄表数据</p>
+</blockquote>
+</li>
+<li>
+<p><strong>主要涉及信息</strong><br />
+<div class="codehilite"><pre>I_ZT 状态（belongid=1401）0:已录入，2:已开账，3:已核计
+S_CID 用户编号
+S_ST 站点
+I_QUYUBH 区域编号
+I_CHAOBIAON 抄表年
+I_CHAOBIAOY 抄表月
+I_ZHANGWUNY 账务年月
+I_XIAOFEIL 消费量(总量)
+
+I_LEIJIXFL 累计消费量
+N_KONGZHIRLF 空置容量费
+I_BUSHOULX 补收类型(belongid=1403 非正常计量 示值误差 一般失效补收)
+I_BUSHOUL 补收量
+N_CHAE 差额(补收类型为金额时显示)
+I_FEIZCJLBSL 非正常计量补收量
+N_FEIZCJLBSF 非正常计量补收费
+
+I_CHAOBIAOFS 抄表方式：现场，PDA，SCADA(belongid=1413)
+S_CHAOBIAOZT 抄表状态:正常、自估、门锁 代码表：cb_chaobiaozt
+I_QIYUAN 气源(系统1101)1=人工煤气 2=天然气
+</pre></div>
+</p>
+</li>
+<li><strong>举例</strong><blockquote>
+<p>用户年用气量</p>
+</blockquote>
+</li>
+</ul>
+<div class="codehilite"><pre>select a.s_cid, substr(a.i_zhangwuny,1,4) year,sum(a.i_xiaofeil) usage from cb_chaobiaosj a
+where a.i_jlzt=0 group by a.s_cid,substr(a.i_zhangwuny,1,4)
+</pre></div>
+
+
+<blockquote>
+<p>区域年用气量</p>
+</blockquote>
+<div class="codehilite"><pre>select substr(a.i_zhangwuny,1,4) year,sum(a.i_xiaofeil) usage,a.i_quyubh area from cb_chaobiaosj a
+where a.i_jlzt=0 group by a.i_quyubh,substr(a.i_zhangwuny,1,4)
+</pre></div>
+
+
+<h2 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.非正常计量信息</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+bw_fzcjlxx</p>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<div class="codehilite"><pre>S_CID 用户编号
+D_PAIGONGR 派工日期
+I_HECHAJG 核查结果（belongid=1608） 1情况属实 2无非正常计量 3疑似信息更正 4无法核查
+I_BUSHOUL 补收量：打印到账单中
+N_YINGFUJE 应付金额
+I_FEIZHENGCJLJSFS 非正常计量计算方式：按金额，按表能量，按设备流量（belongid=1607）
+
+I_CHULIJG 处理结果 1调表 2不调表 3处理未完成（belongid=1609）
+I_JLZT 记录状态（0：正常，-1：作废)
+I_SHOUFEIZT 收费状态：0 不收费；1 已收费； 2 未收费（belongid=1611）
+I_ZT 状态：疑似,已核查,已告示待核查，划价,销根，4注销（belongid=1606）
+</pre></div>
+
+
+<ul>
+<li><strong>举例</strong></li>
+</ul>
+<p>年非正常计量补收量，年非正常计量次数</p>
+<div class="codehilite"><pre>select a.s_cid,to_char(a.d_paigongrq,&#39;yyyy&#39;) year,
+sum(I_BUSHOUL) 年非正常计量补收量, sum(N_YINGFUJE) 年非正常计量金额, count(*) 年非正常计量次数
+from bw_fzcjlxx a where  a.i_jlzt=0 and a.i_shoufeizt&gt;0 and a.i_zt&lt;&gt;4 and a.i_hechajg=1
+group by a.s_cid,to_char(a.d_paigongrq,&#39;yyyy&#39;);
+</pre></div>
+
+
+<p>年非正常计量已处理次数</p>
+<div class="codehilite"><pre>select a.s_cid,to_char(a.d_paigongrq,&#39;yyyy&#39;) year,
+count(*) 年非正常计量已处理次数
+from bw_fzcjlxx a
+where a.i_chulijg=1 and
+a.i_jlzt=0 and a.i_shoufeizt&gt;0 and a.i_zt&lt;&gt;4 and a.i_hechajg=1
+group by a.s_cid,to_char(a.d_paigongrq,&#39;yyyy&#39;);
+</pre></div>
+
+
+<h2 id="5"><a name="user-content-5" href="#5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.催缴信息</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+qf_qianfeicj</p>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<div class="codehilite"><pre><span class="nv">I_JLZT</span> <span class="s s-Atom">记录状态（</span><span class="o">-</span><span class="mi">1</span><span class="s s-Atom">作废，0正常）</span>
+<span class="nv">S_CID</span> <span class="s s-Atom">用户编号</span>
+<span class="nv">I_QIANFEIBS</span> <span class="s s-Atom">欠费笔数</span>
+
+<span class="nv">N_BENJINJE</span> <span class="s s-Atom">本金金额</span>
+<span class="nv">N_ZHINAJ</span> <span class="s s-Atom">滞纳金</span>
+<span class="nv">N_CUIJIAOZJE</span> <span class="nf">催缴总金额</span><span class="p">(</span><span class="s s-Atom">本金+滞纳金</span><span class="p">)</span>
+<span class="nv">N_ZHUXIAOJE</span> <span class="s s-Atom">总注销金额</span>
+<span class="nv">N_XIAOZHANGJE</span> <span class="s s-Atom">总销账金额</span>
+
+<span class="nv">I_CUIJIAOZT</span> <span class="nf">催缴状态</span><span class="p">(</span><span class="s s-Atom">已登记:</span><span class="mi">0</span><span class="p">,</span><span class="s s-Atom">已回填:</span><span class="mi">2</span><span class="p">,</span><span class="s s-Atom">已打印:</span><span class="mi">1</span><span class="p">,</span><span class="nf">撤销</span><span class="o">:-</span><span class="mi">1</span><span class="p">)</span> <span class="s s-Atom">belongid</span> <span class="o">=</span> <span class="mi">1901</span>
+<span class="nv">I_CUIJIAOLX</span> <span class="nf">催缴类型</span><span class="p">(</span><span class="s s-Atom">电话催缴:</span><span class="mi">1</span><span class="p">,</span><span class="s s-Atom">通知单:</span><span class="mi">2</span><span class="p">,</span><span class="s s-Atom">上门催缴:</span><span class="mi">3</span><span class="p">,</span><span class="s s-Atom">抄表员发放:...</span><span class="p">)</span> <span class="s s-Atom">belongid</span><span class="o">=</span><span class="mi">1905</span>
+<span class="nv">I_CUIJIAOJG</span> <span class="nf">催缴结果</span><span class="p">(</span><span class="s s-Atom">送达:</span><span class="mi">1</span><span class="p">,</span><span class="s s-Atom">未送达:</span><span class="mi">2</span><span class="p">,</span><span class="s s-Atom">签收:</span><span class="mi">3</span><span class="p">,</span><span class="s s-Atom">生成暂停供气通知单:...</span><span class="p">)</span> <span class="s s-Atom">belongid</span><span class="o">=</span><span class="mi">1902</span>
+
+<span class="nv">D_DENGJISJ</span> <span class="s s-Atom">登记时间</span>
+<span class="nv">D_CUIJIAORQ</span> <span class="s s-Atom">催缴日期</span>
+<span class="nv">D_CHEXIAO</span> <span class="s s-Atom">撤销日期</span>
+<span class="nv">D_TINGQIRQ</span> <span class="s s-Atom">停气日期</span>
+</pre></div>
+
+
+<ul>
+<li><strong>举例</strong><br />
+年催缴次数，年催缴金额</li>
+</ul>
+<div class="codehilite"><pre>select s_cid/*户号*/,to_char(d_dengjisj,&#39;yyyy&#39;) push_year/*催缴年份*/,
+count(*) push_count/*年催缴次数*/,sum(n_cuijiaozje) push_money/*年催缴金额*/
+from qf_qianfeicj
+where i_cuijiaozt&gt;-1 and i_jlzt=0 group by s_cid,to_char(d_dengjisj,&#39;yyyy&#39;);
+</pre></div>
+
+
+<h2 id="6"><a name="user-content-6" href="#6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.整改信息</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+bw_anjianzgmx 安检整改项目<br />
+bw_anjianpz 安检派工</p>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<p><div class="codehilite"><pre><span class="n">ID</span><span class="o">:</span><span class="err">主键</span>
+<span class="n">S_CID</span><span class="o">:</span><span class="err">客户编号</span>
+<span class="n">S_ANJIANBH</span><span class="o">:</span><span class="err">安检编号</span>
+<span class="n">S_ZHENGGAIBH</span><span class="o">:</span><span class="err">整改编号</span>
+<span class="n">S_JIANYIXM</span><span class="o">:</span><span class="err">建议项目</span>
+<span class="n">D_ANJIANRQ</span><span class="o">:</span><span class="err">安检日期</span>
+<span class="n">D_LURUSJ</span><span class="o">:</span><span class="err">录入日期</span>
+
+<span class="n">ID</span><span class="o">:</span><span class="err">主键</span>
+<span class="n">S_XIANGMUMX</span><span class="o">:</span><span class="err">项目名称</span>
+<span class="n">S_XIANGMUNR</span><span class="o">:</span><span class="err">项目内容</span>
+<span class="n">S_XIANGMUBH</span><span class="o">:</span><span class="err">项目编号</span>
+<span class="n">I_XIANGMULX</span><span class="o">:</span><span class="err">项目类型：</span><span class="mi">1</span><span class="err">：安检项目</span><span class="o">,</span><span class="mi">2</span><span class="err">，整改项目</span><span class="o">,</span><span class="mi">3</span><span class="err">其他整改项目，</span><span class="mi">4</span><span class="err">安检内容</span><span class="o">,</span><span class="mi">5</span><span class="err">单位安检保养</span><span class="o">,</span><span class="mi">6</span><span class="err">矛盾关系</span>
+<span class="n">S_BEIYONG1</span><span class="o">:</span><span class="err">备用</span><span class="o">(</span><span class="err">安检项目</span><span class="o">)</span>
+<span class="n">S_BEIYONG2</span><span class="o">:</span><span class="err">备用</span><span class="o">(</span><span class="err">整改对应</span><span class="o">)</span>
+<span class="n">I_ZT</span><span class="o">:</span><span class="err">状态</span> <span class="mi">1</span><span class="err">：启用</span> <span class="mi">2</span><span class="err">：不启用</span>
+<span class="n">I_ROOTID</span><span class="o">:</span><span class="err">跟节点</span><span class="n">ID</span> <span class="err">为跟节点是为</span><span class="mi">0</span>
+<span class="n">I_PARENTGONGDANID</span><span class="o">:</span><span class="err">父节点</span><span class="n">ID</span>
+<span class="n">S_ANJIANNR</span><span class="o">:</span><span class="err">安检内容关联安检项目标记</span>
+<span class="n">S_SHURUBM</span><span class="o">:</span><span class="err">输入编号</span>
+</pre></div>
+<br />
+* <strong>举例</strong><br />
+XXXXX<br />
+<div class="codehilite"><pre>
+</pre></div>
+</p>
+<h2 id="7"><a name="user-content-7" href="#7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.用户安检信息</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+bw_anjianjh 安检年份：2014，2015，2016三年</p>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<p><div class="codehilite"><pre>ID：主键（关联BW_MINYONGAJD计划ID）
+I_NIANFEN：年份
+I_YUEFEN：月份
+S_ST：站点
+S_CH：统册号
+I_YIHUITS：已回填数（未使用  由BW_MINYONGAJD聚合查出）
+I_YIPAIGS：已派工数（未使用  由BW_MINYONGAJD聚合查出）
+I_CEBENQBPG：册本全部派工：0 是 1 否。否时，只对册本中未派工用户做安检派工（未使用）
+I_SHENGCHENGPGJ:生成派工记录：1:生成， 0未生成 是否已经生成派工记录
+D_SHENGCHENGPGSJ:生成派工时间
+D_SHUJUSCSJ:数据生成时间
+S_CAOZUOR:派工人帐号
+D_CAOZUOSJ:操作时间
+I_JILUZT:记录状态（未使用）
+S_BEIYONG1:备用（未使用）
+S_BEIYONG2:备用（未使用）
+S_BEIYONG3:派工人姓名
+I_BEIYONG1:备用（记录当月调整记录 为1 ，正式计划为空）（未使用）
+I_BEIYONG2:备用(是否固话数据， 1 为固话， null 没有固话)（未使用）
+I_BEIYONG3:备用（未使用）
+D_BEIYONG1:备用（未使用）
+D_BEIYONG2:备用（未使用）
+D_BEIYONG3:备用（未使用）
+I_ZONGHUS:总户数
+I_ZT:状态: 1,临时，-1,作废,2 正式
+S_DENGJIR:登记人
+D_DENGJISJ:登记时间
+S_JIEDAO:街道
+S_JUWEI:居委
+S_XIAOQU:小区
+I_JIHUALX:计划类：1=街道；2=册本（未使用）
+</pre></div>
+<br />
+<em> <strong>举例</strong><br />
+安检用户信息:<br />
+<div class="codehilite"><pre>select
+a.s_cid,to_char(a.d_anjianrq,&#39;yyyy&#39;) nian,
+a.d_anjianrq as ANJIANRQ, a.s_anjianbh
+from
+bw_anjianpg a
+where a.i_zt &lt;&gt; 40
+and to_number(to_char(d_anjianrq,&#39;yyyy&#39;)) between 2014 and 2016
+;
+</pre></div>
+<br />
+</em> <strong>举例</strong><br />
+安检项(通过安检编号关联(.s_anjianbh)):<br />
+<div class="codehilite"><pre>select a.s_anjianbh,
+b.S_XIANGMUMX as XIANGMU,
+c.S_XIANGMUMX as ANJIANLR,
+c.S_XIANGMUNR as ANJIANJG
+ from bw_anjianxmjg a
+left join bw_anjianpz b on b.I_XIANGMULX = 1 and a.s_anjianxm = b.S_XIANGMUBH
+ left join bw_anjianpz c on c.I_XIANGMULX = 4 and a.S_ANJIANJG = c.S_SHURUBM and a.s_anjianxm = c.s_anjiannr;
+</pre></div>
+</p>
+<h2 id="8"><a name="user-content-8" href="#8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8.违章情况</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+bw_anjianxmjg 安检内容和结果<br />
+bw_danweiajjg 单位器具检查</p>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<p><div class="codehilite"><pre>ID  主键
+S_ANJIANBH  安检编号
+S_ANJIANXM  安检项目（BW_ANJIANPZ：I_XIANGMULX）（01进气管，02表前阀门，03表位，04用气管，05灶前阀，06灶具连接，07燃气灶，08热水器，09、98报警器）
+S_ANJIANJG  安检结果（01-08：10、01正常，02、20需整改；09、98：01有，02无）
+
+ID  NUMBER(38,0)  No    1 主键
+S_ANJIANBH  VARCHAR2(50 BYTE) Yes   2 安检编号
+S_ANJIANXM  VARCHAR2(50 BYTE) Yes   3 安检项目（用户词语1618)安检项目（用户词语1618）00 站桩支管01 计量表02 用气管球阀03 大锅灶04 鼓风灶05 炒菜灶06 蒸饭灶07 堡仔炉矮仔炉08 铁连蓬09 煎饼灶10 开关加油11 疏通燃气校火12 热水炉13 捡漏
+S_ANJIANJG  VARCHAR2(50 BYTE) Yes   4 安检结果（0未做，1正常，2有问题）
+</pre></div>
+<br />
+* <strong>举例</strong><br />
+XXXXX<br />
+<div class="codehilite"><pre>
+</pre></div>
+</p>
+<h2 id="9"><a name="user-content-9" href="#9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>9.安全指标</h2>
+<ul>
+<li>
+<p><strong>关联表</strong><br />
+BW_DANWEIANJIAN</p>
+</li>
+<li>
+<p><strong>主要涉及信息</strong></p>
+</li>
+</ul>
+<p><div class="codehilite"><pre>ID  主键
+S_ANJIANBH  安检编号
+S_CID 客户编号
+S_HM  户名
+S_DZ  地址
+S_YONGHUDJ  用户等级 (s_words=1614)1 A，2 B，3 C，4 D
+I_ANJIANXZ  &quot;安检性质 (s_words=1613)1 安检
+2 保养
+&quot;
+D_PAIGONGRQ 派工日期
+S_PAIGONGR  派工人
+S_ST  站点
+S_BAOYANGRY 保养人员
+D_BAOYANGRQ 保养日期
+S_JINMENGZSBH 进门告知书编号
+S_ANJIANDW  安检单位
+I_ANJIANJG  安检结果
+S_JIANCHAGZSBH  检查告知书编号
+S_ZHENGGAIGZSBH 整改告知书编号
+I_SHIFOUSF  是否收费 (s_words=1615)1收费，2不收费
+N_ANJIANSF  安检收费
+S_BUANQYSFX 不安全因素分析
+S_LURUR 录入人
+D_LURUSJ  录入时间
+I_ZT  状态
+S_CAOZUOR 操作人
+D_CAOZUOSJ  操作时间
+I_JLZT  记录状态
+
+S_LIANXIR 联系人
+S_LIANXIDH  联系电话
+N_BIAONENGL 表能量
+S_CH  册本号
+</pre></div>
+<br />
+* <strong>举例</strong><br />
+XXXXX<br />
+<div class="codehilite"><pre>
+</pre></div>
+</p></article></body></html>

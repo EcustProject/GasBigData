@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ecust.shgas.dao.mysql.ProblemMapper">
+
+    <!--定义一个可以复用的SQL语句段,供其它语句调用-->
+    <sql id="where">
+        where fy_leibie in ('一般维修','抄表问题','漏气','其他问题','连接管','校表问题' )
+    </sql>
+    <select id="findProblemSortAll" resultType="Problem">
+        select fy_leibie AS repairType , COUNT(fy_leibie) AS numbers
+        from hotxx2
+        <include refid="where"/>
+        group by fy_leibie
+    </select>
+
+    <select id="findProblemByDistrict" resultType="Problem" parameterType="String">
+      select count(fy_leibie) AS numbers, fy_quming AS district
+      from (select fy_quming, fy_leibie from hotxx2 where fy_quming in ("南汇","卢湾", "嘉定", "奉贤", "宝山", "崇明", "徐汇", "普陀", "杨浦", "松江", "浦东", "虹口", "金山", "长宁", "闵行", "闸北", "青浦", "静安", "黄浦")) a
+      where fy_leibie=#{problem}
+      group by fy_quming
+    </select>
+
+    <select id="findProblemByFestival" resultType="Problem">
+        select fy_leibie AS repairType ,count(fy_leibie) AS numbers
+        from hotxx2
+       <include refid="where"/>
+        and Month(create_time)=#{month} and Day(create_time) between #{minday} and #{maxday}
+        group by fy_leibie
+    </select>
+
+</mapper>

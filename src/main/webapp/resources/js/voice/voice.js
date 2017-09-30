@@ -412,10 +412,9 @@
         url:"/voice",//请求发送到voiceController处
         data:[],//请求内包含一个key为name，value为voice_length的参数；服务器接收到客户端请求时通过request.getParameter方法获取该参数值
         datatype:"json",//返回数据形式为json
-        success : function(result) {
+        success : function(resultData) {
             //请求成功时执行该函数内容，result即为服务器返回的json对象
-            if (result != null && result.length > 0) {
-                var resultData = $.parseJSON(result);//json解析
+            if (resultData != null && resultData.length > 0) {
                 voice_length.setOption({		//载入数据
                     series: [	//填入系列（内容）数据
                         {

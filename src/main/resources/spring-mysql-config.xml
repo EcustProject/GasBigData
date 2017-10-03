@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
-
     <!-- c3p0数据库连接池 -->
     <bean id="mysqlDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
@@ -27,8 +26,8 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis-config.xml" />
         <property name="dataSource" ref="mysqlDataSource" />
-        <property name="typeAliasesPackage" value="ecust.shgas.dao.mysql" />
-        <property name="mapperLocations" value="classpath*:mybatis/mapper/*.xml" />
+        <property name="typeAliasesPackage" value="ecust.shgas.domain" />
+        <property name="mapperLocations" value="classpath*:mapper/*.xml" />
     </bean>
 
     <!-- spring与mybatis整合配置，扫描所有mapper -->

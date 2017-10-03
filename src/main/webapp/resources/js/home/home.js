@@ -1,7 +1,7 @@
 /**
  * Created by huchao on 2017/6/3.
  */
-(function($) {
+(function() {
     var home_data = echarts.init(document.getElementById("home_data"));
     option = {
         title:{
@@ -71,4 +71,4 @@
         ]
     };
     home_data.setOption(option);
-})($)
+})();

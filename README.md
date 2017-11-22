@@ -16,7 +16,7 @@ intellij-> New -> Project from Existing Sources 选择step.1 clone的项目。
 ### 4.配置tomcat
 edit configurations -> + tomcat -> local
 ### 5.测试项目是否可正常启动
-启动tomcat,访问http://localhost:8080/test/hello，查看是否返回正确数据。
+启动tomcat,访问http://localhost:8080/view/index，查看是否返回正确数据。
 
 ## 接口文档
 我们项目的文档位于doc文件夹下。

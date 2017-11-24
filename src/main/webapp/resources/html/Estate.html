@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="上海燃气故障报修量预测">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="/resources/css/Amaze.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/admin.css">
+    <link rel="stylesheet" href="/resources/css/app.css">
+    <script src="/resources/js/plugin/echarts.min.js"></script>
+</head>
+
+<body data-type="chart">
+<header class="am-topbar am-topbar-inverse admin-header">
+</header>
+<div class="tpl-page-container tpl-page-header-fixed">
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            上海燃气
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="Estate.html" class="nav-link">
+                        <i class="am-icon-home"></i>
+                        <span>小区画像</span>
+                    </a>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="GProPrediction.html" class="nav-link tpl-left-nav-link-list ">
+                        <i class="am-icon-bar-chart"></i>
+                        <span>报修量预测（全市）</span>
+
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="GProDistrict.html" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-table"></i>
+                        <span>报修量预测（各区）</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="tpl-content-wrapper">
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    小区画像
+                </div>
+            </div>
+            <div class="am-g"></div>
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-md-4">
+                    <div class="am-form-group">
+                        <select data-am-selected="{btnSize: 'sm'}">
+                            <option value="option1">街道地址</option>
+                            <option value="option2">小区名</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-4">
+                    <div class="am-input-group am-input-group-sm">
+                        <input type="text" placeholder="输入街道地址/小区名" class="am-form-field">
+                        <span class="am-input-group-btn">
+            <button id="search" class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
+          </span>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-4" ></div>
+            </div>
+            <div class="tpl-echarts tpl-chart-mb" id="tpl-echarts-A">
+                <div style="width:900px">
+                    <div id="container1"
+                         style="float: left;
+                                         ,position: absolute;
+                margin-top:30px;
+                width: 900px;
+                height: 450px;
+                top: 125px;
+                border: 1px solid gray;
+                overflow:hidden;">
+                    </div>
+                    <div id="container2"
+                         style="float: left;
+                                         ,position: absolute;
+                margin-top:30px;
+                width: 300px;
+                height: 450px;
+                top: 125px;
+                border: 1px solid gray;
+                overflow:hidden;" hidden>
+                        <div class="row">
+                            <div class="am-u-lg-12" align="center">
+                                <div class=" font-green" >
+                                    <span style="font-size: 25px">小区信息</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="am-u-lg-5 " style="left: 15px">
+                                <div class="dashboard-stat blue">
+                                    <div class="visual">
+                                        <i class="am-icon-comments-o"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="number"> 1349 </div>
+                                        <div class="desc"> 用户数 </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="am-u-lg-5" style="right: 15px">
+                                <div class="dashboard-stat red">
+                                    <div class="visual">
+                                        <i class="am-icon-bar-chart-o"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="number"> 1000 </div>
+                                        <div class="desc"> 用气量 </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="am-u-lg-5" style="left: 15px">
+                                <div class="dashboard-stat green">
+                                    <div class="visual">
+                                        <i class="am-icon-apple"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="number"> 653 </div>
+                                        <div class="desc">报修数量 </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="/resources/js/plugin/jquery.min.js"></script>
+<script src="/resources/js/plugin/amazeui.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#search").click(function(){
+            $("#container1").width(598);
+            $("#container2").show();
+        });
+    });
+</script>
+
+
+</body>
+
+</html>
